@@ -187,7 +187,7 @@ class Spider(Spider):
         return result
 
     def localProxy(self, param):
-        url = unquote(param['url'])
+        url = unquote(param[''])
         data = self.session.get(url, headers=self.headers, timeout=10)
         if data.status_code != 200:
             return [404, "text/plain", ""]
